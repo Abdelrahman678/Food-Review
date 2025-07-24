@@ -4,9 +4,30 @@
     {
       "src": "html/index.html",
       "use": "@vercel/static"
+    },
+    {
+      "src": "css/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "images/*",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "webfonts/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/js/(.*)", "dest": "/js/$1" },
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/webfonts/(.*)", "dest": "/webfonts/$1" },
+    { "src": "/favicon.ico", "dest": "/images/logo.png" },
     { "src": "/(.*)", "dest": "/html/index.html" }
   ]
 }
